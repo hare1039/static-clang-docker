@@ -1,5 +1,5 @@
 ARG LLVM_VER=700
-ARG BOOST_GIT_CLONE_CMD="git clone --recursive --shallow-submodules --depth 1 https://github.com/boostorg/boost.git boost"
+ARG BOOST_GIT_CLONE_CMD="git clone --recursive https://github.com/boostorg/boost.git boost"
 
 FROM ubuntu:18.04 AS builder
 MAINTAINER hare1039 hare1039@hare1039.nctu.me
@@ -104,7 +104,7 @@ RUN cd /root/workspace/build           && \
     ln -s /usr/local/x86_64-linux-musl/lib/libc.so /lib/ld64.so.1
 
 RUN cd /root/workspace                                            && \
-    git clone --recursive https://github.com/boostorg/boost.git boost ; cd boost
+    ${BOOST_GIT_CLONE_CMD} ; cd boost
 
 ENV PATH="/usr/local/x86_64-linux-musl/bin:$PATH"
 COPY clang++.sh /clang++.sh

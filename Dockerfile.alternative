@@ -1,5 +1,5 @@
 ARG LLVM_VER=700
-ARG BOOST_GIT_CLONE_CMD="git clone --recursive --shallow-submodules --depth 1 https://github.com/boostorg/boost.git boost"
+ARG BOOST_VER=1.68.0
 
 FROM ubuntu:18.04 AS builder
 MAINTAINER hare1039 hare1039@hare1039.nctu.me
