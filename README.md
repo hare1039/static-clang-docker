@@ -18,7 +18,7 @@ support build arg
 - `LLVM_VER`  = `7.0.0`
 - `BOOST_VER` = `1.68.0`
 
-The building process will take a long time. It took 15 hours for my laptop to build the image. 
+The building process will take a long time. It took 4 hours for my laptop to build the image. 
 
 BTW, building process will also take ~11G space in disk. Please make sure you have enough space.
 
