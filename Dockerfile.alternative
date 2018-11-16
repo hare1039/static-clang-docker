@@ -104,7 +104,10 @@ RUN cd /root/workspace/build           && \
     ln -s /usr/local/x86_64-linux-musl/lib/libc.so /lib/ld64.so.1
 
 RUN cd /root/workspace                                            && \
-    git clone --recursive https://github.com/boostorg/boost.git boost ; cd boost
+    wget https://dl.bintray.com/boostorg/release/${BOOST_VER}/source/boost_$(echo "${BOOST_VER}" | sed 's/\./_/g').tar.bz2 && \
+    tar jxf boost_$(echo "${BOOST_VER}" | sed 's/\./_/g').tar.bz2 && \
+    mv boost_$(echo "${BOOST_VER}" | sed 's/\./_/g') boost        && \
+    cd boost
 
 ENV PATH="/usr/local/x86_64-linux-musl/bin:$PATH"
 COPY clang++.sh /clang++.sh
