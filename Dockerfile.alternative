@@ -5,7 +5,7 @@ FROM ubuntu:18.04 AS builder
 MAINTAINER hare1039 hare1039@hare1039.nctu.me
 
 ARG LLVM_VER
-ARG BOOST_GIT_CLONE_CMD
+ARG BOOST_VER
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends make            \
